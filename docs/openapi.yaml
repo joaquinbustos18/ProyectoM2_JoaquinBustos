@@ -1,0 +1,83 @@
+openapi: 3.0.0
+
+info:
+  title: MiniBlog API
+  version: 1.0.0
+  description: API REST para gestionar authors y posts
+
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /authors:
+    get:
+      summary: Obtener todos los autores
+      responses:
+        "200":
+          description: Lista de autores
+
+    post:
+      summary: Crear un autor
+      responses:
+        "201":
+          description: Autor creado
+
+  /authors/{id}:
+    get:
+      summary: Obtener autor por ID
+      responses:
+        "200":
+          description: Autor encontrado
+        "404":
+          description: Autor no encontrado
+
+    put:
+      summary: Actualizar autor
+      responses:
+        "200":
+          description: Autor actualizado
+
+    delete:
+      summary: Eliminar autor
+      responses:
+        "204":
+          description: Autor eliminado
+
+  /posts:
+    get:
+      summary: Obtener todos los posts
+      responses:
+        "200":
+          description: Lista de posts
+
+    post:
+      summary: Crear un post
+      responses:
+        "201":
+          description: Post creado
+
+  /posts/{id}:
+    get:
+      summary: Obtener post por ID
+      responses:
+        "200":
+          description: Post encontrado
+
+    put:
+      summary: Actualizar post
+      responses:
+        "200":
+          description: Post actualizado
+
+    delete:
+      summary: Eliminar post
+      responses:
+        "204":
+          description: Post eliminado
+
+  /posts/author/{authorId}:
+    get:
+      summary: Obtener posts de un autor
+      responses:
+        "200":
+          description: Lista de posts del autor
