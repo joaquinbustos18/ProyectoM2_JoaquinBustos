@@ -17,3 +17,7 @@ app.listen(3000, () => {
 const authorRoutes = require("./routes/authors.routes");
 
 app.use("/authors", authorRoutes);
+
+const postRoutes = require("./routes/posts.routes");
+
+app.use("/posts", postRoutes);
